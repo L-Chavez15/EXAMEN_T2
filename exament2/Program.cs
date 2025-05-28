@@ -50,7 +50,7 @@ namespace exament2
                 }
                 
             }
-            while (opcion>=0);
+            while (opcion!=0);
         }
         static void retiro()
         {
