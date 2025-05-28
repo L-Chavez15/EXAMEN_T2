@@ -43,7 +43,7 @@ namespace exament2
                         break;
                     case 3:
                         Console.WriteLine("******SALDO******");
-                        
+                        Saldo();
                         break;
                     default:
                         break;
@@ -81,7 +81,7 @@ namespace exament2
 
                         Console.WriteLine("USTED RETIRO: " + retiro);
                         Console.WriteLine("SU SALDO ACTUAL ES : S/" + saldo);
-                        Saldo(retiro);
+                        
                     }
                     else
                     {
@@ -118,10 +118,24 @@ namespace exament2
 
             }
         }
-        static double Saldo(double retiro)
+        static void Saldo()
         {
-            double saldo=retiro;
-            return saldo;
+            string saldo;
+            Console.WriteLine("HIZO DEPOSIO o RETIRO");
+            saldo = Console.ReadLine();
+            switch (saldo)
+            {
+                case "deposito":
+                    Console.WriteLine("CUANTO DEPOSITO: ");
+                    Double NUM1= double.Parse(Console.ReadLine());
+                    break;
+                case "retiro":
+                    Console.WriteLine("CUANTO RETIRO: ");
+                    Double NUM2 = double.Parse(Console.ReadLine());
+                    break;
+                default:
+                    break;
+            }
         }
         static void salida()
         {
