@@ -76,7 +76,7 @@ namespace exament2
                     else if (retiro <= 500)
                     {
                         retiro = retiro - 8;
-                        saldo = saldo - retiro;
+                        saldo = saldo - (retiro+8);
 
                         Console.WriteLine("USTED RETIRO: " + retiro);
                         Console.WriteLine("SU SALDO ACTUAL ES : S/" + saldo);
@@ -84,7 +84,7 @@ namespace exament2
                     }
                     else
                     {
-                        Console.WriteLine("Nopuede retirar mas de S/. 500");
+                        Console.WriteLine("No puede retirar mas de S/. 500");
                     }
                 }
                     
@@ -108,7 +108,7 @@ namespace exament2
             else if (deposito<=1000)
             {
                 deposito = deposito - 2;
-                saldo = saldo + deposito;
+                saldo = saldo + (deposito+2);
                 Console.WriteLine("USTED DEPOSITO: " + deposito);
             }
             else
