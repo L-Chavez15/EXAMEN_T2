@@ -30,7 +30,8 @@ namespace exament2
                 switch (opcion)
                 {
                     case 0:
-                        Console.WriteLine("******ADIOS******");
+                        
+                        salida();
                         break;
                     case 1:
                         Console.WriteLine("******RETIRO******");
@@ -42,7 +43,7 @@ namespace exament2
                         break;
                     case 3:
                         Console.WriteLine("******SALDO******");
-
+                        
                         break;
                     default:
                         break;
@@ -57,31 +58,40 @@ namespace exament2
             double saldo = 5000;
             double retiro;
             double saldoactual = saldo;
+            
             Console.WriteLine("INRGESE EL MONTO A RETIRAR: ");
             retiro = int.Parse(Console.ReadLine());
-            if (retiro>saldo)
-            {
-                Console.WriteLine("DINERO INSUFICIENTE");
-            }
-            else if (retiro<=saldo)
-            {
-                if (retiro<=0)
+            
+                if (retiro > saldo)
                 {
-                    Console.WriteLine("INGRESE UN NÚMERO VALIDO");
+                    Console.WriteLine("DINERO INSUFICIENTE");
                 }
-                else if (retiro<=500)
+                else if (retiro <= saldo)
                 {
-                    retiro = retiro - 8;
-                    saldo = saldo - retiro;
+                while (true)
+                {
+                    if (retiro <= 0)
+                    {
+                        Console.WriteLine("INGRESE UN NÚMERO VALIDO");
+                    }
+                    else if (retiro <= 500)
+                    {
+                        retiro = retiro - 8;
+                        saldo = saldo - retiro;
 
-                    Console.WriteLine("USTED RETIRO: "+retiro);
-                    Console.WriteLine("SU SALDO ACTUAL ES : S/" + saldo);
+                        Console.WriteLine("USTED RETIRO: " + retiro);
+                        Console.WriteLine("SU SALDO ACTUAL ES : S/" + saldo);
+                        Saldo(retiro);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nopuede retirar mas de S/. 500");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Nopuede retirar mas de 500 soles");
+                    
                 }
-            }
+            
+
         }
         static void Deposito()
         {
@@ -107,6 +117,17 @@ namespace exament2
                 Console.WriteLine("SOLO PUEDE ABONAR S/.1000");
 
             }
+        }
+        static double Saldo(double retiro)
+        {
+            double saldo=retiro;
+            return saldo;
+        }
+        static void salida()
+        {
+            Console.WriteLine("\t\t\t\t*********** ESPERAMOS VERTE DE NUEVO ***********\t\t\t\t \n");
+            Console.WriteLine("\t\t\t\t\t*********** ADIOS ***********\t\t\t\t\t\t \n");
+            Console.ReadKey();
         }
         
     }
