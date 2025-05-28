@@ -68,8 +68,7 @@ namespace exament2
                 }
                 else if (retiro <= saldo)
                 {
-                while (true)
-                {
+                
                     if (retiro <= 0)
                     {
                         Console.WriteLine("INGRESE UN NÚMERO VALIDO");
@@ -89,7 +88,7 @@ namespace exament2
                     }
                 }
                     
-                }
+                
             
 
         }
@@ -121,6 +120,7 @@ namespace exament2
         static void Saldo()
         {
             string saldo;
+            Console.WriteLine("SALDO INICIAL: S/5000");
             Console.WriteLine("HIZO DEPOSIO o RETIRO");
             saldo = Console.ReadLine();
             switch (saldo)
